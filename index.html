@@ -302,7 +302,7 @@ const DATA = {
   phone: "+62 812-3679-7800",
   linkedin: "https://www.linkedin.com/in/made-aryasatya-30a089292/",
   github: "https://github.com/MadeAryasatya",
-  instagram: "",                           // ← optional: your Instagram URL
+  instagram: "https://www.instagram.com/dmadeee/",
 
   // quick stats shown under the hero
   stats: [
@@ -478,6 +478,7 @@ $("about-text").innerHTML = DATA.about;
   c.push(`<a href="tel:${DATA.phone.replace(/[^+\d]/g,"")}"><span class="ico">📞</span>${esc(DATA.phone)}</a>`);
   c.push(`<a href="${DATA.linkedin}" target="_blank" rel="noopener"><span class="ico">💼</span>LinkedIn</a>`);
   if(DATA.github) c.push(`<a href="${DATA.github}" target="_blank" rel="noopener"><span class="ico">🐙</span>GitHub</a>`);
+  if(DATA.instagram) c.push(`<a href="${DATA.instagram}" target="_blank" rel="noopener"><span class="ico">📸</span>Instagram</a>`);
   c.push(`<a><span class="ico">📍</span>${esc(DATA.location)}</a>`);
   $("about-contacts").innerHTML = c.join("");
 }
