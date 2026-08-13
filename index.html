@@ -187,6 +187,9 @@ section{max-width:1080px;margin:0 auto;padding:90px 6vw}
 .proj-card .tags{display:flex;flex-wrap:wrap;gap:6px}
 .proj-card .tags span{font-size:.7rem;font-weight:700;letter-spacing:.5px;color:var(--accent3);
   padding:3px 10px;border-radius:999px;background:rgba(57,208,255,.08)}
+.proj-card .plink{display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;
+  color:var(--accent3);text-decoration:none;transition:transform .2s}
+.proj-card .plink:hover{transform:translateX(4px);text-decoration:underline}
 
 /* ---------- education / certs ---------- */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
@@ -399,6 +402,7 @@ const DATA = {
       icon: "🌊",
       name: "Bali Desa Rafting Website",
       desc: "Responsive company profile & tour-information website — live and actively maintained.",
+      link: "https://balidesarafting.com/",
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
@@ -516,6 +520,7 @@ $("proj-grid").innerHTML = DATA.projects.map(p => `
     <h3>${esc(p.name)}</h3>
     <p>${esc(p.desc)}</p>
     <div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>
+    ${p.link ? `<a class="plink" href="${p.link}" target="_blank" rel="noopener">Visit website ↗</a>` : ""}
   </div></div>`).join("");
 
 // education + certs
